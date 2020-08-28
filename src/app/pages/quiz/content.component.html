@@ -1,0 +1,23 @@
+<ng-container *ngIf="has_next == true; else result">
+  <ng-container *ngIf="question_number != undefined; else start">
+    <div id="contentArea">
+      <p id="question">問題: {{ question }}</p>
+      <div id="answerArea">
+        <input class="one_ans" type="button" value="{{ choices[0] }}" (click)="register(choices[0])" style="background: red"> 
+        <input class="one_ans" type="button" value="{{ choices[1] }}" (click)="register(choices[1])" style="background: aqua">
+        <input class="one_ans" type="button" value="{{ choices[2] }}" (click)="register(choices[2])" style="background: gold">
+        <input type="button" value="どれでもない" (click)="register('どれでもない')" style="background: black">
+      </div>
+      <p>問題数 : {{ (question_index + 1).toString() + " / " + question_number.toString() }}</p>
+      <p>正答数 : {{ correct_answer_number.toString() + " / " + question_number.toString() }}</p>
+    </div>
+    <input id="lifeline" type="button" value="ライフライン" (click)="useLifeline();" style="background-color: palevioletred">
+  </ng-container>
+  <ng-template #start>
+    <p>雑学クイズ(全5問)</p>
+    <input type="button" value="クイズ開始" (click)="createNextQuiz()">
+  </ng-template>
+</ng-container>
+<ng-template #result><p>おつかれさまでした</p><input type="button" value="再チャレンジ" (click)="reset()"></ng-template>
+
+

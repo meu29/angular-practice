@@ -1,0 +1,17 @@
+div#contentArea {
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+}
+
+input[type=button] {
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    padding: 10px 30px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
