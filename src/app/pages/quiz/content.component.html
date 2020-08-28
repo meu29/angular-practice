@@ -3,15 +3,23 @@
     <div id="contentArea">
       <p id="question">問題: {{ question }}</p>
       <div id="answerArea">
-        <input class="one_ans" type="button" value="{{ choices[0] }}" (click)="register(choices[0])" style="background: red"> 
-        <input class="one_ans" type="button" value="{{ choices[1] }}" (click)="register(choices[1])" style="background: aqua">
-        <input class="one_ans" type="button" value="{{ choices[2] }}" (click)="register(choices[2])" style="background: gold">
-        <input type="button" value="どれでもない" (click)="register('どれでもない')" style="background: black">
-      </div>
+        <div style="display: inline-block;">
+          <input class="one_ans" type="button" value="{{ choices[0] }}" (click)="register(choices[0])" style="background: red"> 
+          <input class="one_ans" type="button" value="{{ choices[1] }}" (click)="register(choices[1])" style="background: aqua">
+          <input class="one_ans" type="button" value="{{ choices[2] }}" (click)="register(choices[2])" style="background: gold">
+          <input class="one_ans" type="button" value="{{ choices[3] }}" (click)="register(choices[3])" style="background: green"> 
+        </div>
+        <div>
+          <input class="one_ans" type="button" value="{{ choices[4] }}" (click)="register(choices[4])" style="background: orange">
+          <input class="one_ans" type="button" value="{{ choices[5] }}" (click)="register(choices[5])" style="background: skyblue">
+          <input class="one_ans" type="button" value="{{ choices[6] }}" (click)="register(choices[6])" style="background: yellow">
+          <input type="button" value="どれでもない" (click)="register('どれでもない')" style="background: black">
+        </div>
       <p>問題数 : {{ (question_index + 1).toString() + " / " + question_number.toString() }}</p>
       <p>正答数 : {{ correct_answer_number.toString() + " / " + question_number.toString() }}</p>
+      <input id="lifeline" type="button" value="ライフライン" (click)="useLifeline();" style="background-color: palevioletred;">
     </div>
-    <input id="lifeline" type="button" value="ライフライン" (click)="useLifeline();" style="background-color: palevioletred">
+  </div> 
   </ng-container>
   <ng-template #start>
     <p>雑学クイズ(全5問)</p>

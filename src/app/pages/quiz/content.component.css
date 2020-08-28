@@ -5,7 +5,11 @@ div#contentArea {
 p {
     font-size: 20px;
 }
-
+/*
+div#answerArea {
+    display: flex;
+}
+*/
 input[type=button] {
     color: #fff;
     border-radius: 10px;
